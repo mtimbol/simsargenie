@@ -1,0 +1,73 @@
+// Fonts
+@import '~font-awesome/css/font-awesome.css';
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+@import './tailwind';
+
+$gold: #D29B15;
+
+.text-gold {
+	color: $gold;
+}
+
+.hover\:text-gold:hover {
+	color: $gold;
+}
+
+.bg-gold {
+	background-color: $gold;
+}
+
+.ais-Hits__root button.btn-link {
+	border: 0 !important;
+	box-shadow: none !important;
+	font-weight: normal;
+}
+
+body {
+	font-size: 14px;
+	background-color: #f1f5f9;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.ReactTable .rt-thead.-headerGroups {
+    color: #fff;
+    background-color: #524d49 !important;
+}
+
+.floating-field-menu {
+	margin-top: -30px;
+}
+
+.grid {
+	display: grid;
+}
+
+.table-header {
+	grid-template-columns: 30px 1fr 1fr 1fr 2fr 1fr 1fr 1fr; // 30px repeat(7, 1fr);
+	grid-gap: 10px;
+	@apply .list-reset .p-4 .bg-grey-lighter .text-xs .text-grey-dark;
+}
+
+.table-row {
+	grid-template-columns: 30px 1fr 1fr 1fr 2fr 1fr 1fr 1fr; 
+	grid-gap: 10px;
+	@apply .leading-normal .px-4 .text-sm .text-black;
+}
+
+.table-row-details {
+	@apply .p-4;
+}
+
+.ais-Hits__root button.arrow-button {
+	@apply .bg-transparent .p-0 .text-left;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.border-none {
+	border: 0 !important;
+}

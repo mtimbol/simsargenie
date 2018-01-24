@@ -1,0 +1,20 @@
+// Fonts
+@import '~font-awesome/css/font-awesome.css';
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+
+
+$gold: #D29B15;
+
+.text-gold {
+	color: $gold;
+}
+
+.bg-gold {
+	background-color: $gold;
+}
+
+body {
+	font-size: 14px;
+	background-color: #f1f5f9;
+	font-family: 'Titillium Web', sans-serif;	
+}
