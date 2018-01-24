@@ -75,7 +75,7 @@ class ContactNotes extends React.Component
 			notes_history = this.props.notes.map(note => {
 				return (
 					<li key={note.id} className="text-sm text-grey-darkest my-2">
-						<p className="flex flex-col">
+						<p className="flex flex-col whitespace-normal">
 							{note.message}
 							<span className="text-xs text-grey-dark mt-1">{note.created_at}</span>
 						</p>
