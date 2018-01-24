@@ -5,6 +5,8 @@ import ContactUpdate from './contact-update';
 import ContactNotes from './contact-notes';
 import UpdateContactStatus from './update-status';
 
+import { Highlight } from 'react-instantsearch/dom';
+
 import ArrowRight from '../arrow-right';
 import ArrowDown from '../arrow-down';
 import FilterIcon from '../svg/filter-icon';
@@ -88,10 +90,14 @@ class ContactHitRow extends React.Component
 							contact={hit} 
 							updateContactStatus={(id, status) => this._updateContactStatus(id, status)} />
 					</div>
-					<div className="truncate"><span title={hit.mobile}>{hit.mobile}</span></div>
-					<div className="truncate">{hit.nationality}</div>
 					<div className="truncate">
-						<ContactNotes contact_id={hit.id} notes={hit.notes}/>
+						<Highlight attributeName="mobile" hit={hit} />
+					</div>
+					<div className="truncate">
+						<Highlight attributeName="nationality" hit={hit} />
+					</div>
+					<div className="truncate">
+						<ContactNotes contact_id={hit.id} notes={hit.notes} />
 					</div>
 				</div>
 				{

@@ -19,7 +19,7 @@ class ContactNotesController extends Controller
     		'user_id' => 1, // current user id,
     		'message' => $request->message
     	]);
-
+        
         $contact->searchable();
     }
 }

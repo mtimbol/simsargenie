@@ -71,3 +71,19 @@ table {
 .border-none {
 	border: 0 !important;
 }
+
+.grid {
+	display: grid;
+}
+.contact-filters {
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 10px;
+}
+
+.ais-SearchBox__root {
+	height: 36px !important;
+}
+
+.ais-SearchBox__reset {
+	top: 8px !important;
+}

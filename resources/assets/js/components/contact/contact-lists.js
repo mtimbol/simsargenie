@@ -18,6 +18,11 @@ class ContactLists extends React.Component
 				indexName={window.algolia_contacts_index}
 			>
 				<div>
+					<div className="px-6 pb-4">
+						<div className="grid contact-filters">
+							<SearchBox />
+						</div>
+					</div>
 					<ul className="table-header grid">
 						<li>&nbsp;</li>
 						<li>Community</li>

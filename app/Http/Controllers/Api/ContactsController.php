@@ -18,7 +18,9 @@ class ContactsController extends Controller
 
     public function update($contact, Request $request)
     {
-    	if ($contact->update(['contact_status' => $request->contact_status])) {
+    	if ($contact->update(['contact_status' => $request->contact_status]))
+        {
+            $contact->searchable();
     		return response()->json([
     			'status' => 1,
     			'contact' => 'Contact status has been successfully updated.'

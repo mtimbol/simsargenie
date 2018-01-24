@@ -21,6 +21,8 @@ class ContactPropertiesController extends Controller
 	    	]);
     	}
 
+        $contact->searchable();
+
     	return response()->json([
     		'status' => 0,
     		'message' => 'Oops. You did not pass a property to attach.'
@@ -29,7 +31,8 @@ class ContactPropertiesController extends Controller
 
     public function destroy(Request $request, Contact $contact)
     {
-        if ($request->has('property_id')) {     
+        if ($request->has('property_id'))
+        {
             return $contact->notInterestedIn([
                 'property_id' => $request->property_id
             ]);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Highlight } from 'react-instantsearch/dom';
 
 class UpdateContactStatus extends React.Component
 {
@@ -54,7 +55,7 @@ class UpdateContactStatus extends React.Component
 					<a className="no-underline cursor-pointer mr-2" onClick={() => this.setState({ showModal: !state.showModal})}>
 						<i className="fa fa-filter text-grey-dark"></i>
 					</a>
-					<p>{contact.name}</p>
+					<p><Highlight attributeName="name" hit={contact} /></p>
 				</div>
 				{
 					state.showModal ?
