@@ -15,7 +15,7 @@ use App\Contact;
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
 	Route::get('/', 'Admin\AdminController@index')->name('index');
 
 	// Import Contacts
@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 	Route::post('contacts/import', 'Admin\ImportContactsController@store');
 	Route::put('contacts/import/update-skipped', 'Admin\UpdateSkippedContactsController@update');
 
-	// Contacts
+	// ContactsController
 	Route::get('contacts', 'Admin\ContactsController@index')->name('contacts.index');
 	Route::get('contacts/create', 'Admin\ContactsController@create')->name('contacts.create');
 	Route::get('contacts/{contact}', 'Admin\ContactsController@show')->name('contacts.show');

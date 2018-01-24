@@ -12,7 +12,7 @@
             {{ csrf_field() }}
             <div class="w-full mb-6">
                 <label class="text-grey-darker block mb-2">Email</label>
-                <input type="email" class="shadow border rounded w-full px-3 py-2" />
+                <input type="email" name="email" class="shadow border rounded w-full px-3 py-2" />
             </div> 
             <div class="w-full text-left">
                 <button type="submit" class="text-white bg-gold hover:bg-black rounded px-4 py-2">Send Password Reset Link</button>

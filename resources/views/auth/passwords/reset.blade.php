@@ -8,10 +8,39 @@
     <div class="w-1/2 bg-white shadow p-6">
         <form method="POST" action="{{ route('password.request') }}">
             {{ csrf_field() }}
+            <input type="hidden" name="token" value="{{ $token }}">
             <div class="w-full mb-6">
                 <label class="text-grey text-xs font-semibold uppercase tracking-wide block mb-2">Email</label>
-                <input type="email" class="shadow border rounded w-full px-3 py-2" />
+                <input type="email" name="email" class="shadow border rounded w-full px-3 py-2" />
             </div> 
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
             <div class="w-full mb-6 text-left">
                 <button type="submit" class="text-white bg-blue hover:bg-blue-dark rounded px-4 py-2">Reset Password</button>
                 <a href="{{ route('register') }}" class="text-black px-4 py-2 no-underline">Register</button>
