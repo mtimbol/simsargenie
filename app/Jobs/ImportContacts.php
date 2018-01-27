@@ -128,15 +128,10 @@ class ImportContacts implements ShouldQueue
             }
 
             $message = sprintf('You have successfully imported %s new contacts.', $this->import_count);
+            event( new ContactsWasImported($message));
 
-            if ($this->import_count > 0) {
-                event( new ContactsWasImported($message));
-            }
-    
-            if (count($this->skippedContacts) > 0) {
-                $message = sprintf("%s contacts we're skipped because they're already existing in your database or might be a duplicate records on your CSV file.", count($this->skippedContacts));
-                event(new LogSkippedContacts($message));
-            }
+            $message = sprintf("%s contacts we're skipped because they're already existing in your database or might be a duplicate records on your CSV file.", count($this->skippedContacts));
+            event(new LogSkippedContacts($message));
         });
     }
 }
